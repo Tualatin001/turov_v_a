@@ -5,14 +5,11 @@
 int main() {
 	long a=0, b=0, c=0, d=0, e=0, g=0;
 	long n=0;
-	std::vector <int>m;
+	std::vector <int>m(200005, 9999999);
 	std::cin>>n;
-	std::vector <int>::iterator h;
-	while(n--) {
+	for(int i=0;i<n;i++) {
 		std::cin>>a;
-		h=std::find(m.begin(),m.end(),a);
-		if(h!=m.end()) m.erase(h);
-		m.push_back(a);
+		m[a]=i;
 	}
-	std::cout<<m.at(0)<<'\n';
+	std::cout<<(int)(std::min_element(m.begin(),m.end())-m.begin())<<'\n';
 }
