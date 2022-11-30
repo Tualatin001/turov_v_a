@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
 		s=0.0;
 		c=1;
 	for(long i=1;c>=e||c<=-e;i++) {
-		c=pow((-1),i)*pow(x,2*i)/fac();
+		c=pow((-1),i)*pow(x,2*i)/fac(i*2);
 		s+=c;
 	}
 	in<<x<<' '<<s<<' '<<cos(x)<<'\n';
